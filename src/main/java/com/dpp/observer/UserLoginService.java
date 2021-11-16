@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author wydpp
  **/
-public class User {
+public class UserLoginService {
 
     private List<IUserLoginObserver> loginObservers = new ArrayList<>();
 
