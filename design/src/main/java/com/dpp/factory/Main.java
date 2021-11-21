@@ -2,7 +2,6 @@ package com.dpp.factory;
 
 import com.dpp.factory.framework.Factory;
 import com.dpp.factory.framework.Product;
-import com.dpp.factory.idcard.IDCard;
 import com.dpp.factory.idcard.IDCardFactory;
 
 public class Main {

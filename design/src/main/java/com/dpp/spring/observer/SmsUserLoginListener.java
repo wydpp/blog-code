@@ -3,8 +3,6 @@ package com.dpp.spring.observer;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-
 /**
  * 用户登录监听者
  *
