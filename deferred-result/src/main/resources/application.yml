@@ -1,0 +1,7 @@
+server:
+  port: 8080
+  tomcat:
+    # Maximum number of connections that the server will accept and process at any given time.
+    max-connections: 1
+    # Maximum amount of worker threads.
+    max-threads: 1
