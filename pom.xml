@@ -5,6 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>deferred-result</module>
+        <module>security</module>
+        <module>security</module>
     </modules>
 
     <parent>
