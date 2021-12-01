@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 将User对象交给Spring容器管理 -->
+    <!-- Bean元素：使用该元素描述需要Spring容器管理的对象
+            name属性：给被管理的对象起个名字。获得对象时根据该名称获得对象
+            class属性：被管理对象的完整类名
+            id属性：早年使用的，功能与name属性一模一样，id的规矩：名称不能重复，不能使用特殊字符。所以加了name属性，可以使用特殊字符，名称也可以重复，但是不推荐名称重复。
+            结论：尽量使用name属性
+    -->
+    <bean name="authorService" class="com.dpp.spring.service.AuthorService"></bean>
+    <bean name="blogService" class="com.dpp.spring.service.BlogService">
+        <property name="authorService" ref="authorService"/>
+    </bean>
+</beans>
