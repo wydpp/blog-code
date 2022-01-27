@@ -8,6 +8,7 @@
         <module>security</module>
         <module>security</module>
         <module>spring-demo</module>
+        <module>httpclient</module>
     </modules>
 
     <parent>
