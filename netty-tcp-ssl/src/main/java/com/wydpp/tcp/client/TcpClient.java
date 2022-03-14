@@ -33,12 +33,12 @@ public class TcpClient {
             ChannelFuture future = bootstrap.connect("127.0.0.1", 8888).sync();
             log.info("客户端成功....");
             Scanner scanner = new Scanner(System.in);
-            while (scanner.hasNext()){
+            while (scanner.hasNext()) {
                 String str = scanner.next();
-                if (str.equals("bye")){
+                if (str.equals("bye")) {
                     scanner.close();
                     break;
-                }else {
+                } else {
                     future.channel().writeAndFlush(str);
                 }
             }
@@ -55,4 +55,5 @@ public class TcpClient {
         TcpClient tcpClient = new TcpClient();
         tcpClient.start();
     }
+
 }
