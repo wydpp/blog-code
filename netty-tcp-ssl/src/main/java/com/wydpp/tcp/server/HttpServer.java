@@ -1,24 +1,26 @@
 package com.wydpp.tcp.server;
 
-import com.wydpp.tcp.server.ssl.ContextSslFactory;
+import com.wydpp.tcp.server.ssl.SslContextFactory;
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.*;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelOption;
+import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import io.netty.handler.codec.string.StringDecoder;
-import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.codec.http.HttpObjectAggregator;
+import io.netty.handler.codec.http.HttpRequestDecoder;
+import io.netty.handler.codec.http.HttpResponseEncoder;
 import io.netty.handler.ssl.SslHandler;
-import io.netty.util.CharsetUtil;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import javax.net.ssl.SSLEngine;
 
 /**
  * @author wydpp
  */
 @Component
-public class TcpServer implements CommandLineRunner {
+public class HttpServer implements CommandLineRunner {
 
     public void start() {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
@@ -26,17 +28,16 @@ public class TcpServer implements CommandLineRunner {
         ServerBootstrap serverBootstrap = new ServerBootstrap()
                 .group(bossGroup, workGroup)
                 .channel(NioServerSocketChannel.class)
-                .childHandler(new ChannelInitializer() {
+                .childHandler(new ChannelInitializer<SocketChannel>() {
                     @Override
-                    protected void initChannel(Channel socketChannel) {
+                    protected void initChannel(SocketChannel socketChannel) {
                         //添加编解码
-                        socketChannel.pipeline().addLast("decoder", new StringDecoder(CharsetUtil.UTF_8));
-                        socketChannel.pipeline().addLast("encoder", new StringEncoder(CharsetUtil.UTF_8));
-                        socketChannel.pipeline().addLast(new TcpServerHandler());
-                        SSLEngine engine = ContextSslFactory.getSslContext().createSSLEngine();
-                        engine.setUseClientMode(false);
-                        engine.setNeedClientAuth(true);
-                        socketChannel.pipeline().addFirst(new SslHandler(engine));
+                        socketChannel.pipeline().addLast(new HttpRequestDecoder())
+                                .addLast(new HttpObjectAggregator(65536))
+                                .addLast(new HttpResponseEncoder())
+                                .addLast(new HttpServerHandler())
+                                .addLast(buildSslHandler(socketChannel))
+                        ;
                     }
                 })
                 .option(ChannelOption.SO_BACKLOG, 1024)
@@ -52,12 +53,10 @@ public class TcpServer implements CommandLineRunner {
         }
     }
 
-    public static void main(String[] args) {
-        TcpServer tcpServer = new TcpServer();
-        tcpServer.start();
+    private SslHandler buildSslHandler(SocketChannel socketChannel) {
+        return SslContextFactory.getSslContext().newHandler(socketChannel.alloc());
     }
-
-
+    
     @Override
     public void run(String... args) throws Exception {
         start();

@@ -23,8 +23,8 @@ public class ContextSslFactory {
             e1.printStackTrace();
         }
         try {
-            if (getKeyManagersServer() != null && getTrustManagersServer() != null) {
-                sslContextServer.init(getKeyManagersServer(), getTrustManagersServer(), null);
+            if (getKeyManagersServer() != null ) {
+                sslContextServer.init(getKeyManagersServer(),getTrustManagersServer(), null);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -55,8 +55,9 @@ public class ContextSslFactory {
         KeyStore ks = null;
         try {
             trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-            is = new FileInputStream((new ClassPathResource("certs/serverCerts.jks")).getFile());
-            String keyStorePass = "服务端的证书仓库密码";
+            is = new FileInputStream((new ClassPathResource("certs/serverTrust.jks")).getFile());
+            //服务端的证书仓库密码
+            String keyStorePass = "123456";
             ks = KeyStore.getInstance("JKS");
             ks.load(is, keyStorePass.toCharArray());
             trustManagerFactory.init(ks);
@@ -87,15 +88,15 @@ public class ContextSslFactory {
         FileInputStream is = null;
         KeyStore ks = null;
         KeyManagerFactory keyFac = null;
-
         KeyManager[] kms = null;
         try {
             // 获得KeyManagerFactory对象. 初始化位默认算法
             keyFac = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
 //            String keyStorePath = PropertyUtil.getProperty("httpsKeyStorePath");
-            is = new FileInputStream((new ClassPathResource("certs/serverCerts.jks")).getFile());
+            is = new FileInputStream((new ClassPathResource("certs/serverKeys.jks")).getFile());
             ks = KeyStore.getInstance("JKS");
-            String keyStorePass = "服务端的证书仓库密码";
+            //服务端的证书仓库密码
+            String keyStorePass = "123456";
             ks.load(is, keyStorePass.toCharArray());
             keyFac.init(ks, keyStorePass.toCharArray());
             kms = keyFac.getKeyManagers();
