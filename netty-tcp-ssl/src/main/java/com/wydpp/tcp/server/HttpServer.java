@@ -1,5 +1,6 @@
 package com.wydpp.tcp.server;
 
+import com.wydpp.tcp.server.ssl.ContextSslFactory;
 import com.wydpp.tcp.server.ssl.SslContextFactory;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -15,6 +16,8 @@ import io.netty.handler.codec.http.HttpResponseEncoder;
 import io.netty.handler.ssl.SslHandler;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import javax.net.ssl.SSLEngine;
 
 /**
  * @author wydpp
@@ -32,11 +35,13 @@ public class HttpServer implements CommandLineRunner {
                     @Override
                     protected void initChannel(SocketChannel socketChannel) {
                         //添加编解码
-                        socketChannel.pipeline().addLast(new HttpRequestDecoder())
+                        socketChannel.pipeline()
+                                .addLast(buildSslHandler())
+                                .addLast(new HttpRequestDecoder())
                                 .addLast(new HttpObjectAggregator(65536))
                                 .addLast(new HttpResponseEncoder())
                                 .addLast(new HttpServerHandler())
-                                .addLast(buildSslHandler(socketChannel))
+
                         ;
                     }
                 })
@@ -53,10 +58,18 @@ public class HttpServer implements CommandLineRunner {
         }
     }
 
-    private SslHandler buildSslHandler(SocketChannel socketChannel) {
-        return SslContextFactory.getSslContext().newHandler(socketChannel.alloc());
+//    private SslHandler buildSslHandler(SocketChannel socketChannel) {
+//        return SslContextFactory.getSslContext().newHandler(socketChannel.alloc());
+//    }
+
+    private SslHandler buildSslHandler() {
+        SSLEngine sslEngine = ContextSslFactory.getSslContext().createSSLEngine();
+        sslEngine.setUseClientMode(false);
+        sslEngine.setNeedClientAuth(false);
+        return new SslHandler(sslEngine);
     }
-    
+
+
     @Override
     public void run(String... args) throws Exception {
         start();

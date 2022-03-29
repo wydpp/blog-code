@@ -22,7 +22,7 @@ public class DeferredController {
 
     private final Logger logger = LoggerFactory.getLogger(DeferredController.class);
 
-    private ExecutorService executorService = Executors.newSingleThreadExecutor();
+    private ExecutorService executorService = Executors.newFixedThreadPool(10);
 
 
     @GetMapping("/common/{index}")
@@ -34,7 +34,7 @@ public class DeferredController {
         }
         logger.info(index + " common开始!");
         logger.info(index + " common读取文件开始!");
-        //TimeUnit.SECONDS.sleep(5);
+        TimeUnit.SECONDS.sleep(5);
         logger.info(index + " common读取文件结束!");
         logger.info(index + " common结束!");
         return index + " common";

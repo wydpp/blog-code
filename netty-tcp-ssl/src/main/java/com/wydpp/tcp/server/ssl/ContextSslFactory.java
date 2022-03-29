@@ -24,17 +24,13 @@ public class ContextSslFactory {
         }
         try {
             if (getKeyManagersServer() != null ) {
-                sslContextServer.init(getKeyManagersServer(),getTrustManagersServer(), null);
+                sslContextServer.init(getKeyManagersServer(),null, null);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         sslContextServer.createSSLEngine().getSupportedCipherSuites();
         SSL_CONTEXT_S = sslContextServer;
-    }
-
-    public ContextSslFactory() {
-
     }
 
     public static SSLContext getSslContext() {
@@ -93,7 +89,7 @@ public class ContextSslFactory {
             // 获得KeyManagerFactory对象. 初始化位默认算法
             keyFac = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
 //            String keyStorePath = PropertyUtil.getProperty("httpsKeyStorePath");
-            is = new FileInputStream((new ClassPathResource("certs/serverKeys.jks")).getFile());
+            is = new FileInputStream((new ClassPathResource("certs/serverTrust.jks")).getFile());
             ks = KeyStore.getInstance("JKS");
             //服务端的证书仓库密码
             String keyStorePass = "123456";

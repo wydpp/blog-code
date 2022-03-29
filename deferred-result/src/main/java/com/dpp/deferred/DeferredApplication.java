@@ -6,10 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import javax.servlet.annotation.WebServlet;
 
 /**
- * 开启异步servlet支持
  * @author wydpp
  */
-@WebServlet(asyncSupported = true)
 @SpringBootApplication
 public class DeferredApplication {
 
