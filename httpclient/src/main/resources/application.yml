@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: dev
+
+feign:
+  hystrix:
+    enabled: false
+  httpclient:
+    enabled: false
+    max-connections: 1000
+    max-connections-per-route: 200
+  okhttp:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 30000
+        readTimeout: 30000
+        loggerLevel: full

@@ -5,12 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>deferred-result</module>
-        <module>security</module>
-        <module>security</module>
         <module>spring-demo</module>
         <module>httpclient</module>
         <module>jaxb</module>
         <module>netty-tcp-ssl</module>
+        <module>java-ssl</module>
     </modules>
 
     <parent>
