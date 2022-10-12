@@ -10,6 +10,7 @@
         <module>jaxb</module>
         <module>netty-tcp-ssl</module>
         <module>java-ssl</module>
+        <module>netty</module>
     </modules>
 
     <parent>
