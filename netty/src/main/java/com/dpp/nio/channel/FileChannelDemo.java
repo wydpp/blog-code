@@ -1,6 +1,7 @@
 package com.dpp.nio.channel;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -18,7 +19,8 @@ public class FileChannelDemo {
     public static void main(String[] args) throws IOException {
         //writeDemo();
         //readDemo();
-        readAndWriteByBuffer();
+        //readAndWriteByBuffer();
+        transferFromDemo();
     }
 
     /**
@@ -83,6 +85,25 @@ public class FileChannelDemo {
             fileChannel02.write(byteBuffer);
         }
 
+    }
+
+    /**
+     * 使用FileChannel的transferFrom方法，完成文件拷贝
+     */
+    public static void transferFromDemo() throws IOException {
+        //1.创建一个文件读取流和一个文件输入流
+        FileInputStream fileInputStream = new FileInputStream("./netty/src/main/resources/file/肥东.webp");
+        FileOutputStream fileOutputStream = new FileOutputStream("./netty/src/main/resources/file/肥东副本.webp");
+        //2.获取对应的FileChannel
+        FileChannel inputStreamChannel = fileInputStream.getChannel();
+        FileChannel outputStreamChannel = fileOutputStream.getChannel();
+        //3.使用transferFrom完成拷贝
+        outputStreamChannel.transferFrom(inputStreamChannel,0,inputStreamChannel.size());
+        //4.关闭线管通道和流
+        outputStreamChannel.close();
+        inputStreamChannel.close();
+        fileInputStream.close();
+        fileOutputStream.close();
     }
 
 }
