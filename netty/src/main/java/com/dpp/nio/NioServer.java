@@ -9,6 +9,7 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 
 /**
@@ -22,12 +23,14 @@ public class NioServer {
 
     public static void main(String[] args) throws IOException {
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+        serverSocketChannel.configureBlocking(false);
         Selector selector = Selector.open();
+        System.out.println("初始化keys=" + selector.keys().size());
+        serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+        System.out.println("serverSocketChannel注册后keys=" + selector.keys().size());
         ServerSocket serverSocket = serverSocketChannel.socket();
         InetSocketAddress inetSocketAddress = new InetSocketAddress(8080);
         serverSocket.bind(inetSocketAddress);
-        serverSocketChannel.configureBlocking(false);
-        serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
         System.out.println("服务已启动");
         while (true) {
             selector.select();
@@ -41,6 +44,7 @@ public class NioServer {
                     SocketChannel acceptSocketChannel = socketChannel.accept();
                     acceptSocketChannel.configureBlocking(false);
                     acceptSocketChannel.register(selector, SelectionKey.OP_WRITE | SelectionKey.OP_READ);
+                    System.out.println("socketChannel注册后keys=" + selector.keys().size());
                 }
                 if (selectionKey.isReadable()) {
                     SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
@@ -49,11 +53,11 @@ public class NioServer {
                     int len = socketChannel.read(byteBuffer);
                     System.out.println("len=" + len);
                     while (len > 0) {
-                        String msg = new String(byteBuffer.array(), 0, len);
+                        String msg = new String(byteBuffer.array(), 0, len, StandardCharsets.UTF_8.name());
                         System.out.println(msg);
                         len = socketChannel.read(byteBuffer);
                     }
-                    if (len < 0){
+                    if (len < 0) {
                         System.out.println("客户都断开连接");
                         socketChannel.close();
                     }
