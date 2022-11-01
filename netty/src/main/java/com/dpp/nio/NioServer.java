@@ -39,9 +39,9 @@ public class NioServer {
                 SelectionKey selectionKey = iterator.next();
                 iterator.remove();
                 if (selectionKey.isAcceptable()) {
-                    System.out.println("有一个客户端进来了!");
                     ServerSocketChannel socketChannel = (ServerSocketChannel) selectionKey.channel();
                     SocketChannel acceptSocketChannel = socketChannel.accept();
+                    System.out.println("有一个客户端进来了!id=" + acceptSocketChannel.getRemoteAddress());
                     acceptSocketChannel.configureBlocking(false);
                     acceptSocketChannel.register(selector, SelectionKey.OP_WRITE | SelectionKey.OP_READ);
                     System.out.println("socketChannel注册后keys=" + selector.keys().size());
@@ -62,9 +62,17 @@ public class NioServer {
                         socketChannel.close();
                     }
                     System.out.println("socket信息读取完毕!");
+                    write(socketChannel,"我是服务器，收到你的消息了!");
+                    write(socketChannel,"我是服务器，收到你的消息了2!");
                 }
             }
-
         }
+    }
+
+    private static String write(SocketChannel sc, String msg) throws IOException {
+        System.out.println("服务端发送数据" + msg);
+        ByteBuffer byteBuffer = ByteBuffer.wrap(msg.getBytes(StandardCharsets.UTF_8));
+        sc.write(byteBuffer);
+        return msg;
     }
 }
