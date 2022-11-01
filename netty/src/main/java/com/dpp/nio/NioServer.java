@@ -9,6 +9,7 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 
 /**
@@ -22,12 +23,14 @@ public class NioServer {
 
     public static void main(String[] args) throws IOException {
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+        serverSocketChannel.configureBlocking(false);
         Selector selector = Selector.open();
+        System.out.println("初始化keys=" + selector.keys().size());
+        serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+        System.out.println("serverSocketChannel注册后keys=" + selector.keys().size());
         ServerSocket serverSocket = serverSocketChannel.socket();
         InetSocketAddress inetSocketAddress = new InetSocketAddress(8080);
         serverSocket.bind(inetSocketAddress);
-        serverSocketChannel.configureBlocking(false);
-        serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
         System.out.println("服务已启动");
         while (true) {
             selector.select();
@@ -36,11 +39,12 @@ public class NioServer {
                 SelectionKey selectionKey = iterator.next();
                 iterator.remove();
                 if (selectionKey.isAcceptable()) {
-                    System.out.println("有一个客户端进来了!");
                     ServerSocketChannel socketChannel = (ServerSocketChannel) selectionKey.channel();
                     SocketChannel acceptSocketChannel = socketChannel.accept();
+                    System.out.println("有一个客户端进来了!id=" + acceptSocketChannel.getRemoteAddress());
                     acceptSocketChannel.configureBlocking(false);
                     acceptSocketChannel.register(selector, SelectionKey.OP_WRITE | SelectionKey.OP_READ);
+                    System.out.println("socketChannel注册后keys=" + selector.keys().size());
                 }
                 if (selectionKey.isReadable()) {
                     SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
@@ -49,18 +53,26 @@ public class NioServer {
                     int len = socketChannel.read(byteBuffer);
                     System.out.println("len=" + len);
                     while (len > 0) {
-                        String msg = new String(byteBuffer.array(), 0, len);
+                        String msg = new String(byteBuffer.array(), 0, len, StandardCharsets.UTF_8.name());
                         System.out.println(msg);
                         len = socketChannel.read(byteBuffer);
                     }
-                    if (len < 0){
+                    if (len < 0) {
                         System.out.println("客户都断开连接");
                         socketChannel.close();
                     }
                     System.out.println("socket信息读取完毕!");
+                    write(socketChannel,"我是服务器，收到你的消息了!");
+                    write(socketChannel,"我是服务器，收到你的消息了2!");
                 }
             }
-
         }
+    }
+
+    private static String write(SocketChannel sc, String msg) throws IOException {
+        System.out.println("服务端发送数据" + msg);
+        ByteBuffer byteBuffer = ByteBuffer.wrap(msg.getBytes(StandardCharsets.UTF_8));
+        sc.write(byteBuffer);
+        return msg;
     }
 }

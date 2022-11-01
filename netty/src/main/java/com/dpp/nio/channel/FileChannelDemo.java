@@ -1,10 +1,8 @@
 package com.dpp.nio.channel;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.ByteBuffer;
+import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 
@@ -20,7 +18,8 @@ public class FileChannelDemo {
         //writeDemo();
         //readDemo();
         //readAndWriteByBuffer();
-        transferFromDemo();
+//        transferFromDemo();
+        mappedByteBufferDemo();
     }
 
     /**
@@ -104,6 +103,30 @@ public class FileChannelDemo {
         inputStreamChannel.close();
         fileInputStream.close();
         fileOutputStream.close();
+    }
+
+    /**
+     * 堆外内存修改文件
+     * @throws IOException
+     */
+    public static void mappedByteBufferDemo() throws IOException {
+        /**
+         * 1.MappedByteBuffer可以让文件直接再内存（堆外内存）中修改，操作系统不需要拷贝一次
+         */
+        RandomAccessFile randomAccessFile = new RandomAccessFile("./netty/src/main/resources/file/1.txt","rw");
+        //2.获取对用通道
+        FileChannel fileChannel = randomAccessFile.getChannel();
+        /**
+         * 1:FileChannel.MapMode.READ_WRITE 使用读写模式
+         * 2:0   直接修改的起始位置
+         * 3：5  是映射到内存的大小，即将1.txt的多少个字节映射到内存
+         * 直接修改的范围是[0,5)
+         */
+        MappedByteBuffer mappedByteBuffer = fileChannel.map(FileChannel.MapMode.READ_WRITE, 0, 5);
+        //修改数据
+        mappedByteBuffer.put(0, (byte) 'H');
+        randomAccessFile.close();
+        System.out.println("在文件目录中打开，发现已修改");
     }
 
 }
