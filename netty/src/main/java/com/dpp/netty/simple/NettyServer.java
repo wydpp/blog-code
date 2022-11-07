@@ -2,6 +2,7 @@ package com.dpp.netty.simple;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
@@ -21,7 +22,7 @@ public class NettyServer {
         //1.创建BossGroup和WorkerGroup
         //创建了两个线程组bossGroup和workerGroup
         //bossGroup只处理客户端连接，真正的客户端业务处理交给workerGroup完成
-        NioEventLoopGroup bossGroup = new NioEventLoopGroup();
+        NioEventLoopGroup bossGroup = new NioEventLoopGroup(1);
         NioEventLoopGroup workerGroup = new NioEventLoopGroup();
         //2.创建服务器端的启动对象，配置参数
         ServerBootstrap bootstrap = new ServerBootstrap();
@@ -40,12 +41,24 @@ public class NettyServer {
                         //给pipeline设置处理器
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
+                            //可以使用集合管理SocketChannel，在推送消息时，可以将业务加入到各个channel对应的NioEventLoop的taskQueue或scheduledTaskQueue
+                            System.out.println("客户端socketchannel hascode=" + socketChannel.hashCode());
                             socketChannel.pipeline().addLast(new NettyServerHandler());
                         }
                     });
             System.out.println("服务器 is ready...");
             //绑定端口,并同步，返回一个channelFuture对象。(服务器启动)
             ChannelFuture channelFuture = bootstrap.bind(6666).sync();
+            channelFuture.addListener(new ChannelFutureListener() {
+                @Override
+                public void operationComplete(ChannelFuture channelFuture) throws Exception {
+                    if (channelFuture.isSuccess()){
+                        System.out.println("监听6666端口成功!");
+                    }else {
+                        System.out.println("监听6666端口失败");
+                    }
+                }
+            });
             //对关闭通道进行监听
             channelFuture.channel().closeFuture().sync();
         } catch (Exception e) {
