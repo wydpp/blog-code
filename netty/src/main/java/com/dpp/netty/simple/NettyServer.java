@@ -32,7 +32,8 @@ public class NettyServer {
             bootstrap.group(bossGroup, workerGroup)
                     //使用NioServerSocketChannel作为通道实现
                     .channel(NioServerSocketChannel.class)
-                    //设置线程队列等待连接个数
+                    //设置线程队列等待连接个数。对应TCP/IP协议listen函数中的backlog参数，用来初始化服务器可连接队列大小。
+                    //服务端处理客户端连接请求是顺序处理的，所以同一时间只能处理一个客户端连接。
                     .option(ChannelOption.SO_BACKLOG, 128)
                     //设置保持活动连接状态
                     .childOption(ChannelOption.SO_KEEPALIVE, true)
@@ -60,6 +61,8 @@ public class NettyServer {
                 }
             });
             //对关闭通道进行监听
+            //ChannelFuture sync():等待异步操作执行完毕
+            //此处等待通道关闭执行完毕，如果通道没有关闭，会一直阻塞
             channelFuture.channel().closeFuture().sync();
         } catch (Exception e) {
             e.printStackTrace();
