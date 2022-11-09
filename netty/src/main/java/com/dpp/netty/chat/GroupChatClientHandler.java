@@ -11,6 +11,13 @@ import io.netty.channel.SimpleChannelInboundHandler;
  * @CreateTime 2022/11/09 11:25:00
  */
 public class GroupChatClientHandler extends SimpleChannelInboundHandler<String> {
+
+    private String userName;
+
+    public GroupChatClientHandler(String userName) {
+        this.userName = userName;
+    }
+
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
         System.out.println(msg);

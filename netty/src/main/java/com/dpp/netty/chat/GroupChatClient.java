@@ -31,7 +31,7 @@ public class GroupChatClient {
         this.port = port;
     }
 
-    public void listen() {
+    public void listen(String userName) {
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         Bootstrap bootstrap = new Bootstrap();
         bootstrap.group(workerGroup)
@@ -40,7 +40,7 @@ public class GroupChatClient {
                     @Override
                     protected void initChannel(SocketChannel ch) throws Exception {
                         ch.pipeline().addLast("decoder", new StringDecoder())
-                                .addLast("myHandler",new GroupChatClientHandler())
+                                .addLast("myHandler", new GroupChatClientHandler(userName))
                                 .addLast("encoder", new StringEncoder());
                     }
                 });
@@ -48,6 +48,8 @@ public class GroupChatClient {
             ChannelFuture channelFuture = bootstrap.connect(host, port).sync();
             Channel channel = channelFuture.channel();
             System.out.println("------" + channel.localAddress() + "------");
+            System.out.println("发送客户端登录用户userName=" + userName);
+            channel.writeAndFlush("userName:" + userName);
             //客户端需要输入信息
             Scanner scanner = new Scanner(System.in);
             while (scanner.hasNextLine()) {
@@ -63,6 +65,6 @@ public class GroupChatClient {
     }
 
     public static void main(String[] args) {
-        new GroupChatClient("127.0.0.1", 8080).listen();
+        new GroupChatClient("127.0.0.1", 8080).listen("朋朋" + Math.random());
     }
 }

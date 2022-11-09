@@ -5,6 +5,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
+import io.netty.util.AttributeKey;
 import io.netty.util.concurrent.GlobalEventExecutor;
 
 import java.text.SimpleDateFormat;
@@ -80,10 +81,16 @@ public class GroupChatServerHandler extends SimpleChannelInboundHandler<String> 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
         Channel channel = ctx.channel();
+        if (msg.startsWith("userName")) {
+            //获取用户名称
+            String userName = msg.split(":")[1];
+            channel.attr(AttributeKey.valueOf("userName")).set(userName);
+            return;
+        }
         //遍历channelGroup，根据不同的情况，回送不同消息
         channelGroup.forEach(ch -> {
             if (ch != channel) {
-                ch.writeAndFlush(sdf.format(new Date()) + " " + "【客户】" + channel.remoteAddress() + " 说：" + msg + "\n");
+                ch.writeAndFlush(sdf.format(new Date()) + " " + "【客户】" + channel.attr(AttributeKey.valueOf("userName")).get() + " 说：" + msg + "\n");
             } else {
                 ch.writeAndFlush(sdf.format(new Date()) + " " + "【自己】说：" + msg + "\n");
             }
