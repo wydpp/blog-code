@@ -47,7 +47,8 @@ public class NettyServer {
                             socketChannel.pipeline()
                                     //加一个ProtoBufDecoder,需要指定对那种对象进行解码
                                     .addLast(new ProtobufDecoder(MyDataInfo.MyMessage.getDefaultInstance()))
-                                    .addLast(new NettyServerHandler());
+                                    .addLast(new NettyServerHandler())
+                                    .addLast(new NettyServerHandler2());
                         }
                     });
             System.out.println("服务器 is ready...");

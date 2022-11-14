@@ -13,7 +13,7 @@ import java.nio.charset.StandardCharsets;
  * @Description 自定义一个handler，需要继承netty规定好的某个handlerAdapter
  * @CreateTime 2022/11/03 16:03:00
  */
-public class NettyServerHandler extends ChannelInboundHandlerAdapter {
+public class NettyServerHandler2 extends ChannelInboundHandlerAdapter {
     /**
      * 读取数据事件，这里我们可以读取客户端发送的消息
      * 1.ChannelHandlerContext ctx:上下文对象，含有pipeline，通道channel，连接地址等
@@ -27,7 +27,6 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
         } else {
             System.out.println("客户端发送的数据worker name=" + myMessage.getWorker().getName() + ",age=" + myMessage.getWorker().getAge());
         }
-        ctx.fireChannelRead(msg);
     }
 
     /**
