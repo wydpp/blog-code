@@ -11,7 +11,7 @@
         <module>netty-tcp-ssl</module>
         <module>java-ssl</module>
         <module>netty</module>
-        <module>core</module>
+        <module>core-java</module>
     </modules>
 
     <parent>
