@@ -65,6 +65,6 @@ public class GroupChatClient {
     }
 
     public static void main(String[] args) {
-        new GroupChatClient("127.0.0.1", 8080).listen("朋朋" + Math.random());
+        new GroupChatClient("127.0.0.1", 7000).listen("朋朋" + Math.random());
     }
 }
