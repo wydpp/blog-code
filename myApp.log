@@ -1,0 +1,205 @@
+2023-08-23 09:51:18,157 INFO [main] c.d.d.DeferredApplication [StartupInfoLogger.java:55] Starting DeferredApplication using Java 1.8.0_221 on LAPTOP-SK55EFEV with PID 20876 (D:\code\github\blog-code\deferred-result\target\classes started by wydpp in D:\code\github\blog-code)
+2023-08-23 09:51:18,161 INFO [main] c.d.d.DeferredApplication [SpringApplication.java:639] The following profiles are active: work1
+2023-08-23 09:51:19,181 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8081 (http)
+2023-08-23 09:51:19,192 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8081"]
+2023-08-23 09:51:19,193 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2023-08-23 09:51:19,194 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-08-23 09:51:19,283 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2023-08-23 09:51:19,283 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 1072 ms
+2023-08-23 09:51:19,688 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8081"]
+2023-08-23 09:51:19,713 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8081 (http) with context path ''
+2023-08-23 09:51:19,724 INFO [main] c.d.d.DeferredApplication [StartupInfoLogger.java:61] Started DeferredApplication in 2.312 seconds (JVM running for 4.327)
+2023-08-23 10:07:55,217 INFO [http-nio-8081-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23 10:07:55,219 INFO [http-nio-8081-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2023-08-23 10:07:55,220 INFO [http-nio-8081-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2023-08-23 10:07:55,301 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:08:02,992 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:08:03,810 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:08:04,662 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:08:05,770 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:10:45,857 INFO [main] c.d.d.DeferredApplication [StartupInfoLogger.java:55] Starting DeferredApplication using Java 1.8.0_221 on LAPTOP-SK55EFEV with PID 18740 (D:\code\github\blog-code\deferred-result\target\classes started by wydpp in D:\code\github\blog-code)
+2023-08-23 10:10:45,860 INFO [main] c.d.d.DeferredApplication [SpringApplication.java:639] The following profiles are active: work1
+2023-08-23 10:10:46,723 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8081 (http)
+2023-08-23 10:10:46,732 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8081"]
+2023-08-23 10:10:46,732 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2023-08-23 10:10:46,733 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-08-23 10:10:46,819 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2023-08-23 10:10:46,819 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 909 ms
+2023-08-23 10:10:47,191 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8081"]
+2023-08-23 10:10:47,207 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8081 (http) with context path ''
+2023-08-23 10:10:47,216 INFO [main] c.d.d.DeferredApplication [StartupInfoLogger.java:61] Started DeferredApplication in 1.919 seconds (JVM running for 3.81)
+2023-08-23 10:11:12,241 INFO [http-nio-8081-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23 10:11:12,241 INFO [http-nio-8081-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2023-08-23 10:11:12,242 INFO [http-nio-8081-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2023-08-23 10:11:12,311 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:11:13,644 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:11:14,533 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:11:15,442 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:11:17,254 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:11:30,246 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:11:30,973 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:13:51,197 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:13:51,203 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:13:51,259 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:13:51,260 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:13:51,262 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:13:51,264 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:13:51,294 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:13:51,296 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:13:51,394 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:13:51,395 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:13:51,494 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:13:51,496 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:13:51,595 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:13:51,596 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:13:51,689 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:13:51,691 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:13:51,792 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:13:51,793 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:13:51,891 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:13:51,895 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:14:39,530 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:14:39,536 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:14:39,634 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:14:39,637 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:14:39,728 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:14:39,730 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:14:39,838 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:14:39,840 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:14:39,930 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:14:39,931 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:14:40,020 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:14:40,022 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:14:40,119 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:14:40,121 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:14:40,219 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:14:40,221 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:14:40,316 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:14:40,318 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:14:40,418 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:14:40,418 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:03,326 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:03,327 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:03,433 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:03,435 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:03,525 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:03,527 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:03,635 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:03,637 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:03,727 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:03,729 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:03,836 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:03,838 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:03,930 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:03,931 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:04,039 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:04,040 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:04,132 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:04,135 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:04,224 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:04,228 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:37,438 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:37,441 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:37,537 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:37,539 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:37,638 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:37,639 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:37,738 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:37,740 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:37,835 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:37,838 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:37,938 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:37,940 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:38,039 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:38,040 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:38,139 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:38,141 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:38,236 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:38,238 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:15:38,337 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:15:38,339 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:16:31,828 INFO [main] c.d.d.DeferredApplication [StartupInfoLogger.java:55] Starting DeferredApplication using Java 1.8.0_221 on LAPTOP-SK55EFEV with PID 21540 (D:\code\github\blog-code\deferred-result\target\classes started by wydpp in D:\code\github\blog-code)
+2023-08-23 10:16:31,832 INFO [main] c.d.d.DeferredApplication [SpringApplication.java:639] The following profiles are active: work1
+2023-08-23 10:16:32,650 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8081 (http)
+2023-08-23 10:16:32,659 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8081"]
+2023-08-23 10:16:32,659 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2023-08-23 10:16:32,660 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-08-23 10:16:32,737 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2023-08-23 10:16:32,737 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 851 ms
+2023-08-23 10:16:33,137 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8081"]
+2023-08-23 10:16:33,154 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8081 (http) with context path ''
+2023-08-23 10:16:33,163 INFO [main] c.d.d.DeferredApplication [StartupInfoLogger.java:61] Started DeferredApplication in 1.923 seconds (JVM running for 3.076)
+2023-08-23 10:16:42,255 INFO [http-nio-8081-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23 10:16:42,255 INFO [http-nio-8081-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2023-08-23 10:16:42,257 INFO [http-nio-8081-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 2 ms
+2023-08-23 10:16:42,283 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:16:42,294 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:16:42,371 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:16:42,372 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:16:42,375 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:16:42,377 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:16:42,447 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:16:42,448 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:16:42,539 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:16:42,541 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:16:42,637 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:16:42,640 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:16:42,739 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:16:42,741 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:16:42,839 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:16:42,841 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:16:42,937 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:16:42,940 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:16:43,034 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/sayHello,请求体
+2023-08-23 10:16:43,038 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/error,请求体
+2023-08-23 10:17:29,864 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:17:29,972 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:17:30,067 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:17:30,170 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:17:30,269 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:17:30,371 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:17:30,470 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:17:30,568 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:17:30,682 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:17:30,776 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:18:00,277 INFO [main] c.d.d.DeferredApplication [StartupInfoLogger.java:55] Starting DeferredApplication using Java 1.8.0_221 on LAPTOP-SK55EFEV with PID 10936 (D:\code\github\blog-code\deferred-result\target\classes started by wydpp in D:\code\github\blog-code)
+2023-08-23 10:18:00,283 INFO [main] c.d.d.DeferredApplication [SpringApplication.java:639] The following profiles are active: work1
+2023-08-23 10:18:01,169 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8081 (http)
+2023-08-23 10:18:01,179 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8081"]
+2023-08-23 10:18:01,180 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2023-08-23 10:18:01,180 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-08-23 10:18:01,265 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2023-08-23 10:18:01,265 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 928 ms
+2023-08-23 10:18:01,627 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8081"]
+2023-08-23 10:18:01,645 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8081 (http) with context path ''
+2023-08-23 10:18:01,653 INFO [main] c.d.d.DeferredApplication [StartupInfoLogger.java:61] Started DeferredApplication in 1.981 seconds (JVM running for 3.269)
+2023-08-23 10:18:13,013 INFO [http-nio-8081-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23 10:18:13,013 INFO [http-nio-8081-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2023-08-23 10:18:13,013 INFO [http-nio-8081-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 0 ms
+2023-08-23 10:18:13,039 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:18:13,107 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:18:13,134 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:18:13,225 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:18:13,332 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:18:13,430 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:18:13,538 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:18:13,638 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:18:13,723 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:18:13,835 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:27:18,899 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:30:12,295 INFO [main] c.d.d.DeferredApplication [StartupInfoLogger.java:55] Starting DeferredApplication using Java 1.8.0_221 on LAPTOP-SK55EFEV with PID 19488 (D:\code\github\blog-code\deferred-result\target\classes started by wydpp in D:\code\github\blog-code)
+2023-08-23 10:30:12,300 INFO [main] c.d.d.DeferredApplication [SpringApplication.java:639] The following profiles are active: work1
+2023-08-23 10:30:13,339 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8081 (http)
+2023-08-23 10:30:13,354 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8081"]
+2023-08-23 10:30:13,355 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2023-08-23 10:30:13,356 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-08-23 10:30:13,474 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2023-08-23 10:30:13,475 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 1123 ms
+2023-08-23 10:30:13,896 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8081"]
+2023-08-23 10:30:13,916 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8081 (http) with context path ''
+2023-08-23 10:30:13,926 INFO [main] c.d.d.DeferredApplication [StartupInfoLogger.java:61] Started DeferredApplication in 2.298 seconds (JVM running for 4.129)
+2023-08-23 10:30:17,829 INFO [http-nio-8081-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-23 10:30:17,829 INFO [http-nio-8081-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2023-08-23 10:30:17,830 INFO [http-nio-8081-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2023-08-23 10:30:17,887 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 10:37:10,131 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
