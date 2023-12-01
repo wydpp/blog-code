@@ -44,4 +44,9 @@ public class HelloWorld {
         }
         return "hello " + System.currentTimeMillis();
     }
+
+    public static void main(String[] args) {
+        System.out.println(1692782938675L%500);
+        System.out.println(1692782938675L - 1692782938675L%500);
+    }
 }

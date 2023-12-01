@@ -203,3 +203,21 @@
 2023-08-23 10:30:17,830 INFO [http-nio-8081-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
 2023-08-23 10:30:17,887 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
 2023-08-23 10:37:10,131 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-23 17:16:32,251 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-24 10:01:24,782 INFO [main] c.d.d.DeferredApplication [StartupInfoLogger.java:55] Starting DeferredApplication using Java 1.8.0_221 on LAPTOP-SK55EFEV with PID 29940 (D:\code\github\blog-code\deferred-result\target\classes started by wydpp in D:\code\github\blog-code)
+2023-08-24 10:01:24,787 INFO [main] c.d.d.DeferredApplication [SpringApplication.java:639] The following profiles are active: work1
+2023-08-24 10:01:25,812 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8081 (http)
+2023-08-24 10:01:25,824 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8081"]
+2023-08-24 10:01:25,825 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2023-08-24 10:01:25,825 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.55]
+2023-08-24 10:01:25,923 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2023-08-24 10:01:25,923 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:290] Root WebApplicationContext: initialization completed in 1080 ms
+2023-08-24 10:01:26,328 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8081"]
+2023-08-24 10:01:26,344 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8081 (http) with context path ''
+2023-08-24 10:01:26,355 INFO [main] c.d.d.DeferredApplication [StartupInfoLogger.java:61] Started DeferredApplication in 2.406 seconds (JVM running for 3.96)
+2023-08-24 10:01:42,381 INFO [http-nio-8081-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-24 10:01:42,382 INFO [http-nio-8081-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:525] Initializing Servlet 'dispatcherServlet'
+2023-08-24 10:01:42,383 INFO [http-nio-8081-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:547] Completed initialization in 1 ms
+2023-08-24 10:01:42,461 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-24 10:05:37,703 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
+2023-08-24 10:06:11,908 INFO [http-nio-8081-exec-1] c.d.d.c.DeferredController [RequestLogInterceptor.java:34] 请求客户端ip:127.0.0.1,请求路径:http://127.0.0.1:8081/hello,请求体
