@@ -121,25 +121,9 @@ public class VirtualThreadsDemo {
             //http请求会并发执行
         }
     }
-
     private static void log(String message) {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
         System.out.println(LocalDateTime.now().format(dateTimeFormatter) + ":" + message + " | " + Thread.currentThread());
-    }
-
-
-    private static void httpRequest(){
-        try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
-            //这个接口会耗时1s
-            ClassicHttpRequest httpGet = ClassicRequestBuilder.get("http://127.0.0.1:8080/health")
-                    .build();
-            httpclient.execute(httpGet,classicHttpResponse -> {
-                System.out.println(classicHttpResponse.getEntity().toString());
-                return null;
-            });
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 
 
