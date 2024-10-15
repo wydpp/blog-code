@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
@@ -121,6 +122,7 @@ public class VirtualThreadsDemo {
             //http请求会并发执行
         }
     }
+
     private static void log(String message) {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
         System.out.println(LocalDateTime.now().format(dateTimeFormatter) + ":" + message + " | " + Thread.currentThread());
@@ -129,7 +131,7 @@ public class VirtualThreadsDemo {
 
     public static void main(String[] args) throws Exception {
         //testCreateVirtualThread1();
-        testHttpClientInVirtualThread();
+        //testHttpClientInVirtualThread();
     }
 
 

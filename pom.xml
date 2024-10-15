@@ -9,10 +9,10 @@
         <module>httpclient</module>
         <module>jaxb</module>
         <module>netty-tcp-ssl</module>
-        <module>java-ssl</module>
         <module>netty</module>
         <module>core-java</module>
         <module>jdk21</module>
+        <module>fsm</module>
     </modules>
 
     <parent>
