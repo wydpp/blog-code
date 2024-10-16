@@ -10,7 +10,8 @@ import java.util.concurrent.TimeUnit;
 public class DefaultLogAction implements Action{
     @Override
     public ActionResult action(State from, Event event, State to) {
-        System.out.printf("默认的action执行开始");
+        System.out.printf("\n默认的action执行开始\n");
+        System.out.println("业务逻辑......");
         try {
             TimeUnit.MILLISECONDS.sleep(500);
         } catch (InterruptedException e) {

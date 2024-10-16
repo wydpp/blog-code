@@ -7,13 +7,10 @@ import java.util.List;
 
 /**
  * @author dpp
- * @date 2024/10/15
+ * @date 2024/10/16
  * @Description
  */
-public class MainOrder {
-
-    public MainOrder() {
-    }
+public class SubOrder {
 
     public StateMachine newStateMachine() {
         StateMachine stateMachine = new StateMachine(new DefaultEventProcessor(), buildStateGraph());
@@ -22,7 +19,7 @@ public class MainOrder {
 
     private StateGraph buildStateGraph() {
         StateGraph stateGraph = new StateGraph();
-        stateGraph.setName("主订单状态机图表");
+        stateGraph.setName("子订单状态机图表");
         stateGraph.setStart(State.StateWaitPay);
         stateGraph.setEnd(State.StatePayied);
         List<State> states = new ArrayList<>();
@@ -50,16 +47,5 @@ public class MainOrder {
         transitions.add(new Transition(State.StateWaitConfirm, Event.EventPayConfirm, State.StatePayied,
                 new DefaultLogAction(), null));
         return transitions;
-    }
-
-    public static void main(String[] args) {
-        MainOrder mainOrder = new MainOrder();
-        StateMachine stateMachine = mainOrder.newStateMachine();
-        stateMachine.run(State.StateWaitPay, Event.EventCancel);
-        stateMachine.run(State.StateWaitPay, Event.EventPay);
-        stateMachine.run(State.StateWaitPay, Event.EventPayConfirm);
-        stateMachine.run(State.StateWaitConfirm, Event.EventPayConfirm);
-        //会有异常
-        stateMachine.run(State.StateWaitConfirm, Event.EventPay);
     }
 }

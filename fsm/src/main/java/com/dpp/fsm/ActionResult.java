@@ -21,4 +21,13 @@ public class ActionResult {
     public String getMessage() {
         return message;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("ActionResult{");
+        sb.append("success=").append(success);
+        sb.append(", message='").append(message).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }

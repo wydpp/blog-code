@@ -32,7 +32,7 @@ public class StateMachine {
     }
 
     public State run(State from, Event event) throws StateNotExistException {
-        System.out.printf("开始执行，旧状态为 %s,事件为 %s", from, event);
+        System.out.printf("\n开始执行，旧状态为 %s,事件为 %s", from, event);
         //检测状态是否存在
         if (!graph.getStates().contains(from)) {
             throw new StateNotExistException();
@@ -42,8 +42,8 @@ public class StateMachine {
             throw new StateIsEndException();
         }
         //检测事件和状态是否匹配
-        Transition transition = graph.getTransitionMap().get(from);
-        if (transition == null && transition.getEvent() != event) {
+        Transition transition = graph.getTransition(from, event);
+        if (transition == null) {
             throw new OldStateDontHaveTheEventTransition();
         }
         //新状态
@@ -58,7 +58,7 @@ public class StateMachine {
             }
             //执行转变器的动作
             ActionResult actionResult = transition.getAction().action(from, event, to);
-            System.out.printf("actionResult = %s", actionResult);
+            System.out.printf("\nactionResult = %s", actionResult);
             this.processor.enterNewState(to, event);
             if (transition.getProcessor() != null) {
                 transition.getProcessor().enterNewState(to, event);
@@ -68,7 +68,7 @@ public class StateMachine {
         } finally {
             locker.unlock();
         }
-        System.out.printf("执行结束！");
+        System.out.println("\n执行结束！");
         return to;
     }
 }

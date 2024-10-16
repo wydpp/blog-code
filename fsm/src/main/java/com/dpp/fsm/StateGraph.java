@@ -1,6 +1,5 @@
 package com.dpp.fsm;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +31,7 @@ public class StateGraph {
      */
     private List<Transition> transitions;
 
-    private Map<State, Transition> transitionMap = new HashMap<>();
+    private Map<State, Map<Event, Transition>> transitionMap = new HashMap<>();
 
     public String getName() {
         return name;
@@ -75,13 +74,18 @@ public class StateGraph {
         if (transitions != null) {
             transitionMap.clear();
             for (Transition transition : transitions) {
-                transitionMap.put(transition.getFrom(), transition);
+                Map<Event, Transition> map = transitionMap.computeIfAbsent(transition.getFrom(), k -> new HashMap<>());
+                map.put(transition.getEvent(),transition);
             }
         }
     }
 
-    public Map<State, Transition> getTransitionMap() {
-        return transitionMap;
+    public Transition getTransition(State state, Event event) {
+        Map<Event, Transition> eventTransitionMap = transitionMap.get(state);
+        if (eventTransitionMap != null){
+            return eventTransitionMap.get(event);
+        }
+        return null;
     }
 }
 
