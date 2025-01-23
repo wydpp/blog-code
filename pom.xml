@@ -13,6 +13,7 @@
         <module>core-java</module>
         <module>jdk21</module>
         <module>fsm</module>
+        <module>scheduler-task</module>
     </modules>
 
     <parent>
