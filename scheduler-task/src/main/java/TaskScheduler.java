@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import util.LogUtil;
+
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -55,7 +56,9 @@ public class TaskScheduler {
                 while (tasks.isEmpty()) {//没有任务，等待
                     try {
                         //等待submit唤醒，释放锁
+                        LogUtil.log("无任务，等待唤醒");
                         tasks.wait();
+                        LogUtil.log("有任务，被唤醒");
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -63,13 +66,16 @@ public class TaskScheduler {
                 //取第一个任务，判断是否已经过期，过期则执行，否则等待
                 TaskWrapper taskWrapper = tasks.get(0);
                 if (taskWrapper.executeTime <= System.currentTimeMillis()) {
+                    LogUtil.log("任务放入 workers 执行：" + taskWrapper.task.getPerson().getName());
                     workers.execute(() -> taskWrapper.task.execute());
-                    //已经执行的任务，放入过期队列，等待删除
+                    //删除已经执行的任务
                     tasks.remove(taskWrapper);
-                }else {
+                } else {
+                    long waiteTime = taskWrapper.executeTime - System.currentTimeMillis();
+                    LogUtil.log("任务未到执行时间，等待 " + waiteTime + " ms");
                     try {
                         //等待执行时间,释放锁
-                        tasks.wait(taskWrapper.executeTime - System.currentTimeMillis());
+                        tasks.wait(waiteTime);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

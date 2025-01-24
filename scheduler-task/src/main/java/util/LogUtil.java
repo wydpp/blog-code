@@ -11,7 +11,7 @@ import java.util.Date;
 public class LogUtil {
 
     public static void log(String msg) {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");
         System.out.println(simpleDateFormat.format(new Date()) + ":" + msg);
     }
 }
