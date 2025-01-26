@@ -30,7 +30,7 @@ public class TaskScheduler {
 
         @Override
         public void run() {
-
+            task.execute();
         }
     }
 
@@ -64,10 +64,10 @@ public class TaskScheduler {
                     }
                 }
                 //取第一个任务，判断是否已经过期，过期则执行，否则等待
-                TaskWrapper taskWrapper = tasks.get(0);
+                final TaskWrapper taskWrapper = tasks.get(0);
                 if (taskWrapper.executeTime <= System.currentTimeMillis()) {
                     LogUtil.log("任务放入 workers 执行：" + taskWrapper.task.getPerson().getName());
-                    workers.execute(() -> taskWrapper.task.execute());
+                    workers.execute(taskWrapper);
                     //删除已经执行的任务
                     tasks.remove(taskWrapper);
                 } else {
